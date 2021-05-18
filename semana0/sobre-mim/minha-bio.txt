@@ -1,0 +1,2 @@
+Meu nome é Rubens e sempre fui fascinado por tecnologia. Costumo passar minhas horas livres jogando, vendo séries e comecei recentemente um projeto,
+ um app feito em flutter para a empresa que trabalho como auxiliar de ti.
