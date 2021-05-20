@@ -38,10 +38,6 @@ const pergunta1 = "Você pegou o ônibus? "
 const pergunta2 = "Você acordou na hora? "
 const pergunta3 = "Você teve aula? "
 
-const respostaPergunta1 = pergunta1
-const respostaPergunta2 = pergunta2
-const respostaPergunta3 = pergunta3
-
 console.log(pergunta1,"- ", promptPergunta1)
 console.log(pergunta2,"- ", promptPergunta2)
 console.log(pergunta3,"- ", promptPergunta3)
