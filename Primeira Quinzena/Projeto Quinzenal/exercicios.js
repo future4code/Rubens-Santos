@@ -128,8 +128,6 @@ function checaRenovacaoRG() {
     console.log(checaRenovacao)
   }
 
-
-  console.log(checaRenovacao)
 }
 
 // Exercício 11
