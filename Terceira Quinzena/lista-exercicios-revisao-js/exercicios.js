@@ -11,6 +11,17 @@ function inverteArray(array) {
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
+
+  function retornaPar(numero) {
+    return numero % 2 === 0
+
+  }
+  const novoarray = array.filter(retornaPar)
+
+  return novoarray.map(function (numero) {
+    return Math.pow(numero, 2)
+  })
+
   
 }
 
