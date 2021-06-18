@@ -2,8 +2,8 @@
 function inverteArray(array) {
   const novoarray = []
   for (let i = array.length - 1; i >= 0; i--) {
-    const a = array.pop()
-    novoarray.push(a)
+    const pessoa = array.pop()
+    novoarray.push(pessoa)
   }
   return novoarray
 }
@@ -40,27 +40,36 @@ function retornaNumerosPares(array) {
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
 
-  
-  let a = 0
+
+  let pessoa = 0
 
   for (let numero of array) {
-    if (a < numero) {
-      a = numero
+    if (pessoa < numero) {
+      pessoa = numero
     }
   }
 
-  return a
+  return pessoa
 
 }
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
 
+  let quantidade = 0
+
+  for (let numero of array) {
+    quantidade += 1
+  }
+
+  return quantidade
+
 }
 
 // EXERCÍCIO 06
 function retornaExpressoesBooleanas() {
 
+  
 }
 
 // EXERCÍCIO 07
@@ -69,7 +78,7 @@ function retornaNNumerosPares(n) {
 }
 
 // EXERCÍCIO 08
-function checaTriangulo(a, b, c) {
+function checaTriangulo(pessoa, b, c) {
   // return 'Escaleno'
   // return 'Equilátero'
   // return 'Isósceles'
@@ -77,7 +86,7 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  // Formato do objeto a ser retornado:
+  // Formato do objeto pessoa ser retornado:
   // {
   //   maiorNumero: X,
   //   maiorDivisivelPorMenor: Y,
