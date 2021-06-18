@@ -22,25 +22,35 @@ function retornaNumerosParesElevadosADois(array) {
     return Math.pow(numero, 2)
   })
 
-  
+
 }
 
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-  
+
   function retornaPar(numero) {
     return numero % 2 === 0
   }
 
   return array.filter(retornaPar)
 
-
 }
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
- 
+
+  
+  let a = 0
+
+  for (let numero of array) {
+    if (a < numero) {
+      a = numero
+    }
+  }
+
+  return a
+
 }
 
 // EXERCÍCIO 05
