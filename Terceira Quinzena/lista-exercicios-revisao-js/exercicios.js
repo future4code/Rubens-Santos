@@ -29,7 +29,13 @@ function retornaNumerosParesElevadosADois(array) {
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
   
- 
+  function retornaPar(numero) {
+    return numero % 2 === 0
+  }
+
+  return array.filter(retornaPar)
+
+
 }
 
 // EXERCÍCIO 04
