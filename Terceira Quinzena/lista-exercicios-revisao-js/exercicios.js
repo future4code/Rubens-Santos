@@ -100,17 +100,13 @@ function retornaNNumerosPares(n) {
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  // return 'Escaleno'
-  // return 'Equilátero'
-  // return 'Isósceles'
-  
   if (a == b && a == c) {
     return `Equilátero`
 
-  } else if(a == b || a == c || b == c){
+  } else if (a == b || a == c || b == c) {
     return `Isósceles`
 
-  } else if(a != b && b != c && a != c){
+  } else if (a != b && b != c && a != c) {
     return `Escaleno`
   }
 }
@@ -120,7 +116,7 @@ function comparaDoisNumeros(num1, num2) {
   let maior
   let divisivel
   let diferenca
-  
+
   if (num1 > num2) {
     maior = num1
     divisivel = ((num1 % num2) === 0)
@@ -138,16 +134,33 @@ function comparaDoisNumeros(num1, num2) {
     diferenca = 0
   }
 
-  return  {maiorNumero: maior, maiorDivisivelPorMenor:divisivel, diferenca: diferenca}
+  return { maiorNumero: maior, maiorDivisivelPorMenor: divisivel, diferenca: diferenca }
 }
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
+  const novoarray = []
+
+  const a = array.sort((a,b) => {
+    return a - b
+  })
+  
+  novoarray.push(a[a.length-2])
+  novoarray.push(a[1])
+
+
+  return novoarray
 
 }
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
+  
+let a = array.sort(function comparaNumeros(a,b){
+  return a - b
+})
+
+return a
 
 }
 
