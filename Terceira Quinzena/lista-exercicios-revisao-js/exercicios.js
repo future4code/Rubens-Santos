@@ -70,11 +70,31 @@ function retornaQuantidadeElementos(array) {
 function retornaExpressoesBooleanas() {
   const respostas = [false,false,true,true,true]
   return respostas
-  
+
 }
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
+
+const a = Array.from(Array(100).keys())
+
+let b = 0
+let pares = []
+
+for(let numero of a){
+  if(numero % 2 == 0){
+    pares.push(numero)
+    b += 1
+  }
+
+  if(b == n){
+    break
+  }
+
+}
+
+return pares
+
 
 }
 
