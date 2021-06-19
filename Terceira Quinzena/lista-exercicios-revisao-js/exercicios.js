@@ -68,7 +68,7 @@ function retornaQuantidadeElementos(array) {
 
 // EXERCÍCIO 06
 function retornaExpressoesBooleanas() {
-  const respostas = [false,false,true,true,true]
+  const respostas = [false, false, true, true, true]
   return respostas
 
 }
@@ -76,24 +76,24 @@ function retornaExpressoesBooleanas() {
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
 
-const a = Array.from(Array(100).keys())
+  const a = Array.from(Array(100).keys())
 
-let b = 0
-let pares = []
+  let b = 0
+  let pares = []
 
-for(let numero of a){
-  if(numero % 2 == 0){
-    pares.push(numero)
-    b += 1
+  for (let numero of a) {
+    if (numero % 2 == 0) {
+      pares.push(numero)
+      b += 1
+    }
+
+    if (b == n) {
+      break
+    }
+
   }
 
-  if(b == n){
-    break
-  }
-
-}
-
-return pares
+  return pares
 
 
 }
@@ -107,12 +107,28 @@ function checaTriangulo(pessoa, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  // Formato do objeto pessoa ser retornado:
-  // {
-  //   maiorNumero: X,
-  //   maiorDivisivelPorMenor: Y,
-  //   diferenca: Z
-  // }
+  let maior
+  let divisivel
+  let diferenca
+
+  if (num1 > num2) {
+    maior = num1
+    divisivel = ((num1 % num2) === 0)
+    diferenca = num1 - num2
+
+  } else if (num2 > num1) {
+
+    maior = num2
+    divisivel = ((num2 % num1) === 0)
+    diferenca = num2 - num1
+
+  } else if (num1 === num2) {
+    maior = num1
+    divisivel = true
+    diferenca = 0
+  }
+  
+  return  {maiorNumero: maior, maiorDivisivelPorMenor:divisivel, diferenca: diferenca}
 }
 
 // EXERCÍCIO 10
