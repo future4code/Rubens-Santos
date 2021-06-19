@@ -99,10 +99,20 @@ function retornaNNumerosPares(n) {
 }
 
 // EXERCÍCIO 08
-function checaTriangulo(pessoa, b, c) {
+function checaTriangulo(a, b, c) {
   // return 'Escaleno'
   // return 'Equilátero'
   // return 'Isósceles'
+  
+  if (a == b && a == c) {
+    return `Equilátero`
+
+  } else if(a == b || a == c || b == c){
+    return `Isósceles`
+
+  } else if(a != b && b != c && a != c){
+    return `Escaleno`
+  }
 }
 
 // EXERCÍCIO 09
@@ -110,7 +120,7 @@ function comparaDoisNumeros(num1, num2) {
   let maior
   let divisivel
   let diferenca
-
+  
   if (num1 > num2) {
     maior = num1
     divisivel = ((num1 % num2) === 0)
@@ -127,7 +137,7 @@ function comparaDoisNumeros(num1, num2) {
     divisivel = true
     diferenca = 0
   }
-  
+
   return  {maiorNumero: maior, maiorDivisivelPorMenor:divisivel, diferenca: diferenca}
 }
 
