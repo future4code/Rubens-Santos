@@ -280,4 +280,11 @@ function ordenaPorData(consultasData) {
 // EXERCÍCIO 20
 function calculaSaldo(contas) {
 
+  contas.forEach((conta) => {
+    let gasto = conta.compras
+    let gastoTotal = gasto.reduce((valorInicial,valorFinal) => valorInicial + valorFinal,0)
+    conta.saldoTotal -= gastoTotal
+})
+
+  return contas
 }
