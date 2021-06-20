@@ -76,18 +76,18 @@ function retornaExpressoesBooleanas() {
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
 
-  const a = Array.from(Array(100).keys())
+  const menorNumero = Array.from(Array(100).keys())
 
-  let b = 0
+  let comparador = 0
   let pares = []
 
-  for (let numero of a) {
+  for (let numero of menorNumero) {
     if (numero % 2 == 0) {
       pares.push(numero)
-      b += 1
+      comparador += 1
     }
 
-    if (b == n) {
+    if (comparador == n) {
       break
     }
 
@@ -99,14 +99,14 @@ function retornaNNumerosPares(n) {
 }
 
 // EXERCÍCIO 08
-function checaTriangulo(a, b, c) {
-  if (a == b && a == c) {
+function checaTriangulo(menorNumero, comparador, c) {
+  if (menorNumero == comparador && menorNumero == c) {
     return `Equilátero`
 
-  } else if (a == b || a == c || b == c) {
+  } else if (menorNumero == comparador || menorNumero == c || comparador == c) {
     return `Isósceles`
 
-  } else if (a != b && b != c && a != c) {
+  } else if (menorNumero != comparador && comparador != c && menorNumero != c) {
     return `Escaleno`
   }
 }
@@ -141,12 +141,12 @@ function comparaDoisNumeros(num1, num2) {
 function segundoMaiorEMenor(array) {
   const novoarray = []
 
-  const a = array.sort((a, b) => {
-    return a - b
+  const menorNumero = array.sort((menorNumero, comparador) => {
+    return menorNumero - comparador
   })
 
-  novoarray.push(a[a.length - 2])
-  novoarray.push(a[1])
+  novoarray.push(menorNumero[menorNumero.length - 2])
+  novoarray.push(menorNumero[1])
 
 
   return novoarray
@@ -156,27 +156,27 @@ function segundoMaiorEMenor(array) {
 // EXERCÍCIO 11
 function ordenaArray(array) {
 
-  let a = array.sort(function comparaNumeros(a, b) {
-    return a - b
+  let menorNumero = array.sort(function comparaNumeros(menorNumero, comparador) {
+    return menorNumero - comparador
   })
 
-  return a
+  return menorNumero
 
 }
 
 // EXERCÍCIO 12
 function filmeFavorito() {
 
-  const a = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
+  const menorNumero = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
 
-  return a
+  return menorNumero
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
-  const a = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
+  const menorNumero = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
 
-  return `Venha assistir ao filme ${a.nome}, de ${a.ano}, dirigido por ${a.diretor} e estrelado por ${a.atores[0]}, ${a.atores[1]}, ${a.atores[2]}, ${a.atores[3]}.`
+  return `Venha assistir ao filme ${menorNumero.nome}, de ${menorNumero.ano}, dirigido por ${menorNumero.diretor} e estrelado por ${menorNumero.atores[0]}, ${menorNumero.atores[1]}, ${menorNumero.atores[2]}, ${menorNumero.atores[3]}.`
 
 }
 
@@ -196,11 +196,11 @@ function criaRetangulo(lado1, lado2) {
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-  const a = {
+  const menorNumero = {
     ...pessoa,
     nome: "ANÔNIMO"
   }
-  return a
+  return menorNumero
 }
 
 // EXERCÍCIO 16A
@@ -269,23 +269,31 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
-  const a = consultasNome.sort(function (a, b) {
-              if (a.nome > b.nome) {
+  const listaOrdenada = consultasNome.sort(function (menorNumero, comparador) {
+              if (menorNumero.nome > comparador.nome) {
                 return 1
               }
-              if (a.nome < b.nome) {
+              if (menorNumero.nome < comparador.nome) {
                 return -1
               }
               return 0
             })
 
-  return a
+  return listaOrdenada
 }
 
 
 // EXERCÍCIO 19B
 function ordenaPorData(consultasData) {
 
+  // let timestamp = consultasData.map((data) =>{
+  //   let time = new Date(data.dataDaConsulta).getTime()
+  //   return time
+  // })
+
+  // return timestamp.sort((a,b) => {
+  //   return a - b
+  // })
 
 }
 
