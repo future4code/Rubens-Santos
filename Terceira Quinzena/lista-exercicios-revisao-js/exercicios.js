@@ -141,11 +141,11 @@ function comparaDoisNumeros(num1, num2) {
 function segundoMaiorEMenor(array) {
   const novoarray = []
 
-  const a = array.sort((a,b) => {
+  const a = array.sort((a, b) => {
     return a - b
   })
-  
-  novoarray.push(a[a.length-2])
+
+  novoarray.push(a[a.length - 2])
   novoarray.push(a[1])
 
 
@@ -155,26 +155,26 @@ function segundoMaiorEMenor(array) {
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
-  
-let a = array.sort(function comparaNumeros(a,b){
-  return a - b
-})
 
-return a
+  let a = array.sort(function comparaNumeros(a, b) {
+    return a - b
+  })
+
+  return a
 
 }
 
 // EXERCÍCIO 12
 function filmeFavorito() {
 
-  const a = {nome: "O Diabo Veste Prada", ano: 2006, diretor:"David Frankel",atores:["Meryl Streep","Anne Hathaway","Emily Blunt","Stanley Tucci"]}
+  const a = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
 
   return a
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
-  const a = {nome: "O Diabo Veste Prada", ano: 2006, diretor:"David Frankel", atores:["Meryl Streep","Anne Hathaway","Emily Blunt","Stanley Tucci"]}
+  const a = { nome: "O Diabo Veste Prada", ano: 2006, diretor: "David Frankel", atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"] }
 
   return `Venha assistir ao filme ${a.nome}, de ${a.ano}, dirigido por ${a.diretor} e estrelado por ${a.atores[0]}, ${a.atores[1]}, ${a.atores[2]}, ${a.atores[3]}.`
 
@@ -184,28 +184,35 @@ function imprimeChamada() {
 function criaRetangulo(lado1, lado2) {
 
   const retangulo = {
-    largura: lado1, 
+    largura: lado1,
     altura: lado2,
-    perimetro: 2*(lado1 + lado2) ,
-    area: lado1*lado2
+    perimetro: 2 * (lado1 + lado2),
+    area: lado1 * lado2
   }
 
   return retangulo
-    
+
 }
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-
+  const a = {
+    ...pessoa,
+    nome: "ANÔNIMO"
+  }
+  return a
 }
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
 
+
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
+
+ 
 
 }
 
