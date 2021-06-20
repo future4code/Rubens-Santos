@@ -225,15 +225,30 @@ function menoresDe18(arrayDePessoas) {
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
 
+  return array.map((numero) =>{
+    return numero*2
+  })
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
-
+  
+  return array.map((numero) =>{
+    return (numero*2).toString()
+  })
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
+
+  return array.map((numero) =>{
+    if (numero % 2 != 0) {
+      return `${numero} é ímpar`
+    } else {
+      return `${numero} é par`
+    }
+
+  })
 
 }
 
