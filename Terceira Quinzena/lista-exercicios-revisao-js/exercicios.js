@@ -217,7 +217,7 @@ function maioresDe18(arrayDePessoas) {
 function menoresDe18(arrayDePessoas) {
 
   return arrayDePessoas.filter((pessoa)=>{
-    return pessoa.idade <= 18
+    return pessoa.idade < 18
   })
 
 }
