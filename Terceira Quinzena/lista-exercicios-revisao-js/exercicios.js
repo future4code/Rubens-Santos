@@ -206,7 +206,7 @@ function anonimizaPessoa(pessoa) {
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
 
-  return arrayDePessoas.filter((pessoa)=>{
+  return arrayDePessoas.filter((pessoa) => {
     return pessoa.idade >= 18
   })
 
@@ -216,7 +216,7 @@ function maioresDe18(arrayDePessoas) {
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
 
-  return arrayDePessoas.filter((pessoa)=>{
+  return arrayDePessoas.filter((pessoa) => {
     return pessoa.idade < 18
   })
 
@@ -225,23 +225,23 @@ function menoresDe18(arrayDePessoas) {
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
 
-  return array.map((numero) =>{
-    return numero*2
+  return array.map((numero) => {
+    return numero * 2
   })
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
-  
-  return array.map((numero) =>{
-    return (numero*2).toString()
+
+  return array.map((numero) => {
+    return (numero * 2).toString()
   })
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
 
-  return array.map((numero) =>{
+  return array.map((numero) => {
     if (numero % 2 != 0) {
       return `${numero} é ímpar`
     } else {
@@ -269,11 +269,23 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
+  const a = consultasNome.sort(function (a, b) {
+              if (a.nome > b.nome) {
+                return 1
+              }
+              if (a.nome < b.nome) {
+                return -1
+              }
+              return 0
+            })
 
+  return a
 }
+
 
 // EXERCÍCIO 19B
 function ordenaPorData(consultasData) {
+
 
 }
 
@@ -281,10 +293,9 @@ function ordenaPorData(consultasData) {
 function calculaSaldo(contas) {
 
   contas.forEach((conta) => {
-    let gasto = conta.compras
-    let gastoTotal = gasto.reduce((valorInicial,valorFinal) => valorInicial + valorFinal,0)
+    let gastoTotal = conta.compras.reduce((valorInicial, valorFinal) => valorInicial + valorFinal, 0)
     conta.saldoTotal -= gastoTotal
-})
+  })
 
   return contas
 }
