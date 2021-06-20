@@ -165,21 +165,23 @@ return a
 }
 
 // EXERCÍCIO 12
-function filmeFavorito(nome,ano,diretor,atores) {
+function filmeFavorito() {
 
   const a = {nome: "O Diabo Veste Prada", ano: 2006, diretor:"David Frankel",atores:["Meryl Streep","Anne Hathaway","Emily Blunt","Stanley Tucci"]}
-  
+
   return a
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
-  // "Venha assistir ao filme NOME_DO_FILME, de ANO, dirigido por DIRECAO e estrelado por ELENCO."
+ 
+
 }
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
 
+    
 }
 
 // EXERCÍCIO 15
