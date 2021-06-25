@@ -1,0 +1,77 @@
+body{
+    width: 940px;
+    margin: 0 auto;
+}
+
+/* Index */
+header {
+    display: flex;
+    margin-bottom: 100px;
+    background-color: rgb(230, 228, 228);
+   
+}
+
+.bemvindo{
+    display: flex;
+    display: inline;
+    margin-left: 50px;
+}
+
+
+
+nav {
+    margin-right: 20;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.principal{
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(219, 219, 219);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+.blocoRedesSociais{
+    display: flex;
+    align-items: center;
+}
+#siga{
+    display: inline;
+}
+.sociais{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.sociais li{
+    display: inline;
+    margin: 10px;
+}
+
+/* add-produto */
+
+.iconeRedes{
+    width: 50px;
+}
+
+.addproduto{
+    display: flex;
+    justify-content: center;
+}
+
+label{
+    display: inline-block;
+    width: 150px;
+}
+
+/* Funcionarios */
+
+.funcionarios{
+    margin-bottom: 10px;
+}
