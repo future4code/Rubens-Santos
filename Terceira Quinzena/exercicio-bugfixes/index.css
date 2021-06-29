@@ -67,20 +67,29 @@ div img {
   *
   **/
 
+
+
+
 #container-de-descricao {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #2274a5;
     color: white;
 }
 
-#container-de-descricao>ol {
-    padding: 15px 0px;
+#textoprincipal p{
+    padding: 20px 0px;
 }
+
 
 #container-para-comprar {
     background-color: #e7eb90;
 }
 
 #container-para-comprar>p {
+    
     color: #c44f00;
     padding: 30px;
     font-size: 60px;
