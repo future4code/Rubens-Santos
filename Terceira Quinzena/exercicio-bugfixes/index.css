@@ -107,8 +107,20 @@ div:last-child {
     text-align: center;
 }
 
+.grid{
+    display: grid;
+}
+
+.tabelacompras{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
 table {
-    width: 60%;
+    width:30%;
     text-align: center;
 }
 
@@ -117,10 +129,13 @@ table {
     height: 50px;
 }
 
+
+
 td button {
     background-color: #fadf63;
     width: 150px;
     height: 30px;
+
     border-radius: 5px;
     color: black;
 }
