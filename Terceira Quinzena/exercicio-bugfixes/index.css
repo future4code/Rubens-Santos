@@ -78,10 +78,9 @@ div>p:first-child {
     color: white;
 }
 
-#textoprincipal p{
-    padding: 20px 0px;
+#textoprincipal ol{
+    margin: 20px 0px;
 }
-
 
 #container-para-comprar {
     background-color: #e7eb90;
