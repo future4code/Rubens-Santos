@@ -51,14 +51,21 @@ class App extends React.Component {
     this.setState({inputNome:event.target.value})
   }
 
+  onChangeFoto = (event) =>{
+    this.setState({inputFoto:event.target.value})
+  }
+
+  onChangeImagem = (event) =>{
+    this.setState({inputImagem:event.target.value})
+  }
   
   render() {
 
     return (
       <MainContainer>
-        <input value={this.state.inputNome} onChange={this.onChangeNome}/>
-        <input value={this.state.inputFoto}/>
-        <input value={this.state.inputImagem}/>
+        <input value={this.state.inputNome} onChange={this.onChangeNome} placeholder="Nome do usuário"/>
+        <input value={this.state.inputFoto} onChange={this.onChangeFoto} placeholder='Link da foto de perfil'/> 
+        <input value={this.state.inputImagem} onChange={this.onChangeImagem} placeholder='Link da foto do Post'/> 
         
         <button onClick={this.adicionaPosts}>INICIO</button>
         {this.listaPosts()}
