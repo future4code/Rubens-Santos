@@ -26,8 +26,8 @@ export default class extends React.Component {
         return (
             <Wrapper>
                 <InputBox>
-                    <Input required placeholder='Email' />
-                    <Input required placeholder='Senha' />
+                    <Input required placeholder='Email' onChange={this.props.onChangeEmail} value={this.props.email} />
+                    <Input required placeholder='Senha' onChange={this.props.onChangePassword} value={this.props.password}/>
                     <button>Entrar</button>
                 </InputBox>
             </Wrapper>
