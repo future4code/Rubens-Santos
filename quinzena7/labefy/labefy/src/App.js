@@ -4,17 +4,17 @@ import axios from 'axios'
 import Button from './Components/Button'
 import CriarPlaylist from './Components/CriarPlaylist'
 import AllPlaylists from './Components/AllPlaylists'
+import AddTrack from './Components/AddTrack'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   background-color: #2941AB;
 `
 
-const InputSection = styled.div`
+const MainSection = styled.div`
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,8 @@ class App extends React.Component {
   state = {
     pagecontroller: 1,
     playlistname: '',
-    allplaylists:[]
+    allplaylists: [],
+    
   }
 
 
@@ -35,9 +36,16 @@ class App extends React.Component {
     })
   }
 
+
   playlists = () => {
     this.setState({
       pagecontroller: 2
+    })
+  }
+
+  addTrackPage = () => {
+    this.setState({
+      pagecontroller: 3
     })
   }
 
@@ -47,89 +55,104 @@ class App extends React.Component {
     })
   }
 
-  getAllPlaylists = () => {
-    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
-    
-    axios.get(url, {
-      headers:{
-        Authorization:"rubens-santos-johnson"
-      }
-    })
+  
 
-    .then((res) => {
-        this.setState({
-          allplaylists:res.data.result.list
-        })
-        
-    })
-    .catch((err) =>{
-      console.log(err)
-      alert('Ocorreu um erro')
-    })
-  }
+  // getAllPlaylists = () => {
+  //   const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
 
-  createPlaylist = () => {
-    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
-    const body = {
-      name: this.state.playlistname
-    }
+  //   axios.get(url, {
+  //     headers: {
+  //       Authorization: "rubens-santos-johnson"
+  //     }
+  //   })
 
-    axios.post(url, body, {
-      headers:{
-        Authorization:'rubens-santos-johnson'
-      }
-    })
+  //     .then((res) => {
+  //       this.setState({
+  //         allplaylists: res.data.result.list
+  //       })
 
-    .then((res) => {
-        alert('Playlist Criada')
-    })
-    .catch((err) =>{
-      console.log(err)
-      alert('Ocorreu um erro')
-    })
-  }
-
-  screenChange = () => {
-    switch (this.state.pagecontroller) {
-      case 1:
-        return (
-
-          <CriarPlaylist
-            onChange={this.createOnChange}
-            createPlaylist={this.createPlaylist}
-            value={this.state.name}
-          />
-        )
-
-      case 2:
-        
-        return (
-          
-          <AllPlaylists
-            getallplaylists={this.getAllPlaylists()}
-            playlists={this.state.allplaylists}
-          />
-          )
-    }
-  }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //       alert('Ocorreu um erro')
+  //     })
+  // }
 
   
-  render() {
-    return (
-      <Wrapper>
 
-        <div>
-          <Button buttontext='Criar Playlist' onclick={this.createPlaylistPage} />
-          <Button buttontext='Todas as Playlists' onclick={this.playlists} />
-        </div>
+  createPlaylist = () => {
+      const url = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+      const body = {
+        name: this.state.playlistname
+      }
 
-        <InputSection>
-          {this.screenChange()}
-        </InputSection>
-      </Wrapper>
+      axios.post(url, body, {
+        headers: {
+          Authorization: 'rubens-santos-johnson'
+        }
+      })
 
-    )
+        .then((res) => {
+          alert('Playlist Criada')
+        })
+        .catch((err) => {
+          console.log(err)
+          alert('Ocorreu um erro')
+        })
+    }
+
+
+    screenChange = () => {
+      switch (this.state.pagecontroller) {
+        case 1:
+          return (
+
+            <CriarPlaylist
+              onChange={this.createOnChange}
+              createPlaylist={this.createPlaylist}
+              value={this.state.name}
+            />
+          )
+
+        case 2:
+
+          return (
+
+            <AllPlaylists
+              url="https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+              name={this.state.name}
+            />
+          )
+
+        case 3:
+          return (
+
+            <AddTrack
+
+            />
+          )
+      }
+    }
+
+
+    render() {
+      return (
+        <Wrapper>
+        
+          <div>
+            <Button buttontext='Criar Playlist' onclick={this.createPlaylistPage} />
+            <Button buttontext='Todas as Playlists' onclick={this.playlists} />
+            <Button buttontext='Adicionar ' onclick={this.addTrackPage} />
+          </div>
+
+          <MainSection>
+            {this.screenChange()}
+          </MainSection>
+        </Wrapper>
+
+      )
+    }
   }
-}
 
-export default App
+
+  export default App
