@@ -9,10 +9,32 @@ const Wrapper = styled.div`
   height: 100vh;
 `
 export default class App extends React.Component{
+  state ={
+    email:'',
+    password:''
+  }
+
+  onChangeEmail = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+  }
+  onChangePassword = (event) => {
+    this.setState({
+      password: event.target.value
+    })
+  }
+
   render(){
     return(
       <Wrapper>
-            <LoginBox/>
+            <LoginBox
+            
+            onChangeEmail = {this.onChangeEmail}
+            onChangePassword ={this.onChangePassword}
+            email = {this.state.email}
+            password = {this.state.password}
+            />
       </Wrapper>
     )
   }
