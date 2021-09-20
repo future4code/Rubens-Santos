@@ -37,6 +37,7 @@ export const DeleteTrip = () => {
 
     useEffect(() => {
         getTrips()
+
     }, [])
     const getTrips = async () => {
         setLoading('false')
@@ -86,6 +87,7 @@ export const DeleteTrip = () => {
                     </Wrapper>
                 )
         }
+        
     }
     return (
         <div>

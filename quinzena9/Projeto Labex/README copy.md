@@ -1,7 +1,6 @@
-# AstroMatch
+# LabeX
 
-Um projeto clone do Tinder.
-
+Uma agência de viagens interplanetária
 
 # Índice
 
