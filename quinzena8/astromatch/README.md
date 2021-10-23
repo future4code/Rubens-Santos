@@ -26,8 +26,9 @@ API AstroMatch disponibilizada pela Labenu:  [AstroMatch](https://documenter.get
 # Screenshots
 
 Tela Inicial do AstroMatch
+<div>
 ![Tela Inicial](https://i.imgur.com/CmNRhZc.png)
-
+</div
 Tela com todos os Matchs do Usuário
 ![Tela de Matches](https://i.imgur.com/p907Iyz.png)
 
