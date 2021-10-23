@@ -6,10 +6,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styled from 'styled-components'
-import mars from '../components/img/mars.jpg'
-import netuno from '../components/img/netuno.jpeg'
-import Plutão from '../components/img/Plutão.jpg'
-import Jupiter from '../components/img/Jupiter.jpg'
+import Mars from "./img/Mars.jpg"
+import netuno from './img/netuno.jpeg'
+import Plutão from './img/Plutão.jpg'
+import Jupiter from './img/Jupiter.jpg'
+
 
 const Wrapper = styled.div`
   margin: 20px 50px 0 20px;
@@ -37,7 +38,7 @@ export default function TripCard(props) {
   const chooseImage = () => {
     switch (props.planet) {
       case 'Marte':
-        return mars
+        return Mars
         break
       case 'Netuno':
         return netuno
@@ -56,10 +57,11 @@ export default function TripCard(props) {
       <StyledCard>
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt={props.name}
           height="180"
           image={chooseImage()}
         />
+        
         <CardContent >
           <Typography gutterBottom variant="h6" component="div">
             {props.name}
@@ -72,8 +74,7 @@ export default function TripCard(props) {
           </Typography>
         </CardContent>
         <StyledCardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Button size="small">Detalhes</Button>
         </StyledCardActions>
       </StyledCard>
     </Wrapper>

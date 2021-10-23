@@ -15,7 +15,7 @@ export const LoadingSpinner = () => {
         color="#00BFFF"
         height={100}
         width={100}
-        timeout={10000} //3 secs
+        timeout={10000} //10 secs
       />
     );
 }

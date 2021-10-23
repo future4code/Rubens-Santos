@@ -70,7 +70,7 @@ export const DeleteTrip = () => {
             return (
                 <TripBox>
                     <p>{trip.name}</p>
-                    <DeleteButton onClick={() => deleteTrip(trip.id)}></DeleteButton>
+                    <DeleteButton onClick={() => deleteTrip(trip.id)}><img src="https://img.icons8.com/small/30/000000/filled-trash.png"/></DeleteButton>
                 </TripBox>
             )
         })

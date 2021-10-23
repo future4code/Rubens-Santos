@@ -56,7 +56,7 @@ const Select = styled.select`
 `
 
 export const CreateTripForm = () => {
-    const [form, setForm] = useState({ name: '', planet: '', date: '', description: '', duration: '' })
+    const [form, setForm] = useState({ name: '', planet: 'Mercúrio', date: '', description: '', duration: '' })
 
     const onChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value })

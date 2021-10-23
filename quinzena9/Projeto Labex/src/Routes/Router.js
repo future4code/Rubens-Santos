@@ -1,8 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Administrative } from "./Pages/Administrative";
-import { Home } from "./Pages/Home";
-import { Trips } from "./Pages/ListTrips";
-import { Login } from "./Pages/Login";
+import { Administrative } from "../Pages/Administrative";
+import { Home } from "../Pages/Home";
+import { Trips } from "../Pages/ListTrips";
+import { Login } from "../Pages/Login";
 
 export const Router = () => {
     return (

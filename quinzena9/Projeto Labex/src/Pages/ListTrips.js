@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import axios from "axios"
-import TripCard from "../TripCard"
+import TripCard from "../Components/TripCard"
 import { Button } from "@mui/material/"
 import { useHistory } from "react-router"
 import { useEffect, useState } from "react"
-import { LoadingSpinner } from "../LoadingSpinner"
+import { LoadingSpinner } from "../Components/LoadingSpinner"
+import { Header } from "../Components/Header"
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -16,24 +17,6 @@ const Wrapper = styled.div`
     background-size: cover;
     overflow: hidden;
 
-`
-const Header = styled.div`
-    height: 8vh;
-    width: 100%;
-    background-color: purple;
-    color: white;
-    opacity: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-
-`
-const AdmButtonBox = styled.div`
-    position: absolute;
-    right:0;
-    height:8vh;
 `
 const Main = styled.div`
     height: 92vh;
@@ -55,11 +38,14 @@ const WelcomeBox = styled.div`
 `
 const List = styled.div`
     width: 100%;
-    height: 55%;
-    display: flex;
+    height: 90%;
+    display: grid;
+    margin-left: auto;
+    justify-content: center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto ;
     overflow: scroll;
-    overflow-y: hidden;
-    display: flex;
+    overflow-x: hidden;
 
         ::-webkit-scrollbar {
         height: 15px;
@@ -74,9 +60,9 @@ const List = styled.div`
         }
 
     @media(max-Width:600px){
+        display: flex;
         flex-direction: column;
         height: 100%;
-        overflow-x: hidden;
         overflow-y:scroll;
 
         ::-webkit-scrollbar-track {
@@ -136,12 +122,7 @@ export const Trips = () => {
     }
     return (
         <Wrapper>
-            <Header>
-                <h1>LabeX</h1>
-                <AdmButtonBox>
-                    <Button sx={{ borderRadius: 0, borderRight: 0, borderBottom: 0, borderTop: 0, borderColor: "black", minHeight: '100%', color: "white", }} variant='outlined' onClick={() => goToHome()}>Home</Button>
-                </AdmButtonBox>
-            </Header>
+            <Header/>        
             <Main>
                 <WelcomeBox>
                     <List>

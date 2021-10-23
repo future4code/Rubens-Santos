@@ -1,12 +1,12 @@
 import styled from "styled-components"
+import axios from "axios"
 import { Button } from "@mui/material/"
 import { useHistory } from "react-router"
 import { useState, useEffect } from "react"
-import Alert from '@mui/material/Alert';
-import { LoadingSpinner } from "../LoadingSpinner";
-
-
-import axios from "axios"
+import { LoadingSpinner } from "../Components/LoadingSpinner";
+import { goToHome } from "../Routes/Routes";
+import { Base_URL } from "../Constants/Url";
+import { Header } from "../Components/Header";
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -17,32 +17,8 @@ const Wrapper = styled.div`
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
-
 `
-const Header = styled.div`
-    height: 8vh;
-    width: 100%;
-    background-color: purple;
-    color: white;
-    opacity: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
 
-    @media(max-Width:600px){
-        justify-content: flex-start;
-        padding-left:10px;
-    }
-`
-const AdmButtonBox = styled.div`
-    position: absolute;
-    right:0;
-    height:8vh;
-    margin-right: 10px;
-
-`
 const Main = styled.div`
     height: 92vh;
     display: flex;
@@ -70,7 +46,6 @@ const Form = styled.form`
     @media(max-Width:600px){
         width: 90%;
     }
-
 `
 const Input = styled.input`
     width: 100%;
@@ -83,10 +58,7 @@ const Input = styled.input`
     :focus{
         outline: none;
     }
-
-    
 `
-
 
 export const Login = () => {
     const [form, setForm] = useState({ email: '', password: '' })
@@ -97,11 +69,7 @@ export const Login = () => {
     }
 
     const history = useHistory()
-
-    const goToHome = () => {
-        history.push('/')
-    }
-
+    
     useEffect(() => {
         const authKey = localStorage.getItem('LoginAuthKey')
         if (authKey) {
@@ -114,7 +82,7 @@ export const Login = () => {
     const Login = async (event) => {
         event.preventDefault()
         setLoading('true')
-        const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/rubens/login'
+        const url = `${Base_URL}/login`
         const body = {
             email: form.email,
             password: form.password
@@ -150,12 +118,8 @@ export const Login = () => {
     }
     return (
         <Wrapper>
-                <Header>
-                    <h1>LabeX</h1>
-                    <AdmButtonBox>
-                        <Button sx={{ borderRadius: 0, borderRight: 0, borderBottom: 0, borderTop: 0, borderColor: "black", minHeight: '100%', color: "white", }} variant='outlined' onClick={() => goToHome()}>Home</Button>
-                    </AdmButtonBox>
-                </Header>
+                <Header/>
+                   
                 <Main>
                     <WelcomeBox>
                         {ShowLoading()}

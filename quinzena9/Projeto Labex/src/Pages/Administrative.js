@@ -2,8 +2,9 @@ import styled from "styled-components"
 import { Button } from "@mui/material/"
 import { useHistory } from "react-router"
 import { useEffect, useState } from "react"
-import { CreateTripForm } from "../CreateTripForm"
-import { DeleteTrip } from '../DeleteTrip'
+import { CreateTripForm } from "../Components/CreateTripForm"
+import { DeleteTrip } from '../Components/DeleteTrip'
+import { Header } from "../Components/Header"
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -14,29 +15,6 @@ const Wrapper = styled.div`
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
-`
-const Header = styled.div`
-    height: 8vh;
-    width: 100%;
-    background-color: purple;
-    color: white;
-    opacity: 0.9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-
-    @media(max-Width:600px){
-        justify-content: flex-start;
-        padding-left:10px;
-    }
-`
-const AdmButtonBox = styled.div`
-    position: absolute;
-    right:0;
-    height:8vh;
-    margin-right: 10px;
 `
 const Main = styled.div`
     height: 92vh;
@@ -96,10 +74,6 @@ export const Administrative = () => {
 
     const history = useHistory()
 
-    const goToHome = () => {
-        history.push('/')
-    }
-
     const checkLogin = (message) => {
         const authKey = localStorage.getItem('LoginAuthKey')
         if (!authKey) {
@@ -110,7 +84,8 @@ export const Administrative = () => {
 
     const Logout = () => {
         localStorage.removeItem('LoginAuthKey')
-        checkLogin('Desconectado com Sucesso')
+        alert('Desconectado com Sucesso.')
+        history.push('/login')
     }
 
     const CreateorDeleteTrip = () => {
@@ -137,14 +112,9 @@ export const Administrative = () => {
 
     return (
         <Wrapper>
-            <div>
-                <Header>
-                    <h1>LabeX</h1>
-                    <AdmButtonBox>
-                        <Button sx={{ borderRadius: 0, borderRight: 0, borderBottom: 0, borderTop: 0, borderColor: "black", minHeight: '100%', color: "white", }} disableElevation variant='outlined' onClick={() => goToHome()} >Home</Button>
-                        <Button sx={{ borderRadius: 0, borderBottom: 0, borderTop: 0, borderColor: "black", minHeight: '100%', color: "white", }} variant='outlined' onClick={() => Logout()} >Logout</Button>
-                    </AdmButtonBox>
-                </Header>
+                <Header
+                    logout={Logout}
+                />
                 <Main>
                     <WelcomeBox>
                         <Buttons>
@@ -156,7 +126,6 @@ export const Administrative = () => {
                         </List>
                     </WelcomeBox>
                 </Main>
-            </div>
         </Wrapper>
     )
 }
